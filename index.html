@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abrarul Haq M – Resume and Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F6;--surface:#FFFFFF;--text:#0E1524;--muted:#4C586D;--line:#CFD7E4;
+  --red:#B3202F;--blue:#0B5FBF;--redsoft:rgba(179,32,47,.09);--bluesoft:rgba(11,95,191,.09);--code:#0E1524;--codetext:#DCE6F5;
+  --sans:"Space Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#090E18;--surface:#111A2A;--text:#E5EBF5;--muted:#92A0B8;--line:#24324A;--red:#FF5A6B;--blue:#52A8FF;--redsoft:rgba(255,90,107,.10);--bluesoft:rgba(82,168,255,.10);--code:#060A12;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#090E18;--surface:#111A2A;--text:#E5EBF5;--muted:#92A0B8;--line:#24324A;--red:#FF5A6B;--blue:#52A8FF;--redsoft:rgba(255,90,107,.10);--bluesoft:rgba(82,168,255,.10);--code:#060A12;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6}
+h1,h2,h3,p,ul,pre{margin:0}
+ul{list-style:none;padding:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between;align-items:center;padding:1rem 0;font-size:.9rem}
+nav div{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text)}
+nav button{font:inherit;font-size:.85rem;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.3rem .7rem;cursor:pointer}
+.hero{position:relative;padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0 -100vw;z-index:-1;background:linear-gradient(100deg,var(--redsoft) 0 50%,var(--bluesoft) 50% 100%)}
+.hero::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;z-index:-1;background:linear-gradient(var(--red),var(--blue));transform:skewX(-10deg)}
+.hero h1{font-size:clamp(2.4rem,9vw,4.6rem);line-height:1;letter-spacing:-.03em;font-weight:700;text-align:center}
+.hero h1 .r{color:var(--red)}.hero h1 .b{color:var(--blue)}
+.role{text-align:center;color:var(--muted);margin:1rem auto 0;max-width:38ch;font-size:1.1rem}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
+.side{font-family:var(--mono);font-size:.85rem;padding:.9rem 1rem;border-radius:8px;background:var(--surface);border:1px solid var(--line)}
+.side.red{border-top:3px solid var(--red)}.side.blue{border-top:3px solid var(--blue)}
+.side b{display:block;font-size:1rem;margin-bottom:.2rem}
+.side.red b{color:var(--red)}.side.blue b{color:var(--blue)}
+.cta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:2rem}
+.cta a,.cta button{font:inherit;font-weight:500;text-decoration:none;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.5rem 1rem;cursor:pointer}
+.cta a:hover,.cta button:hover{border-color:var(--text)}
+section{padding:3rem 0 0}
+h2{font-size:1.6rem;letter-spacing:-.01em;margin-bottom:1.2rem}
+p{max-width:64ch}p+p{margin-top:.8rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.1rem 1.25rem}
+.panel.red{border-left:4px solid var(--red)}.panel.blue{border-left:4px solid var(--blue)}
+.panel h3{font-size:1.05rem;margin-bottom:.6rem}
+.panel.red h3{color:var(--red)}.panel.blue h3{color:var(--blue)}
+.panel li{font-family:var(--mono);font-size:.88rem;padding:.2rem 0;display:flex;justify-content:space-between;gap:.5rem}
+.panel li i{font-style:normal;color:var(--muted);font-size:.78rem}
+.chips{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.chips button{font:inherit;font-size:.88rem;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.3rem .9rem;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.labs{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1rem}
+.lab{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem;min-width:0}
+.lab[data-t="red"]{border-top:3px solid var(--red)}.lab[data-t="blue"]{border-top:3px solid var(--blue)}
+.lab h3{font-size:1rem}.lab small{display:block;font-family:var(--mono);color:var(--muted);font-size:.78rem}
+.lab p{font-size:.92rem;margin:.4rem 0 .7rem;color:var(--muted)}
+pre{background:var(--code);color:var(--codetext);font-family:var(--mono);font-size:.78rem;line-height:1.6;padding:.8rem;border-radius:6px;overflow-x:auto;max-width:100%}
+pre .c{color:#8FA3C2}pre .k{color:#7CE3A0}
+.note{font-size:.85rem;color:var(--muted);margin-top:1rem}
+.tl li p{font-size:.92rem;color:var(--muted);margin-top:.2rem}
+.tl li{border-left:3px solid var(--line);padding:.1rem 0 .1rem 1rem;margin-bottom:.9rem;display:flex;flex-direction:column}
+.tl li:nth-child(odd){border-color:var(--red)}.tl li:nth-child(even){border-color:var(--blue)}
+.tl span{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.contact a{display:inline-block;margin:0 .6rem .6rem 0;padding:.5rem 1rem;border:1px solid var(--line);background:var(--surface);border-radius:6px;text-decoration:none}
+.contact a:hover{border-color:var(--text)}
+footer{margin-top:3rem;padding:1.5rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+.bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + .75rem);z-index:5;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;max-width:calc(100% - 1.5rem);box-shadow:0 4px 18px rgba(0,0,0,.3);font-size:.8rem;color:var(--muted)}
+.bar button{font:inherit;font-size:.85rem;color:var(--text);background:transparent;border:1px solid var(--line);border-radius:6px;padding:.35rem .8rem;cursor:pointer}
+.bar button[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
+.ctl{font:inherit;font-size:.8rem;cursor:pointer;border-radius:5px;padding:.15rem .6rem;margin:.4rem .4rem 0 0;background:var(--surface);color:var(--text);border:1px solid var(--line)}
+.ctl.add{border-style:dashed;color:var(--blue);border-color:var(--blue);background:transparent}
+.editing [contenteditable]{outline:1px dashed var(--blue);outline-offset:2px;border-radius:3px;min-width:2ch}
+footer{margin-bottom:5rem}
+@media print{.bar,.ctl{display:none!important}}
+@media(max-width:34rem){.sides{grid-template-columns:1fr}.hero::after{display:none}.hero::before{background:linear-gradient(var(--redsoft) 0 50%,var(--bluesoft) 50% 100%)}}
+@media print{.hero::before,.hero::after,nav,.cta,.chips{display:none!important}:root{--bg:#fff;--surface:#fff;--text:#000;--muted:#333;--line:#bbb}.lab[hidden]{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div><a href="#about">About</a><a href="#skills">Skills</a><a href="#exp">Experience</a><a href="#labs">Projects</a><a href="#certs">Certifications</a><a href="#contact">Contact</a></div>
+    <button id="mode" aria-label="Switch light or dark">Light / Dark</button>
+  </nav>
+
+  <header class="hero">
+    <h1><span class="r">Abrarul</span> <span class="b">Haq M</span></h1>
+    <p class="role">Second-year cybersecurity student seeking an internship. TryHackMe top 6%.</p>
+    <div class="sides">
+      <div class="side red"><b>Red team</b>Nmap, Burp Suite, Metasploit, Hydra, sqlmap: find and prove the weakness.</div>
+      <div class="side blue"><b>Blue team</b>Wireshark, Nessus, packet analysis: detect it and write the fix.</div>
+    </div>
+    <div class="cta">
+      <a href="#labs">View projects</a>
+      <a href="https://www.linkedin.com/in/abrarul-haq-64b084382">LinkedIn</a>
+      <a href="https://tryhackme.com/p/abrarul007">TryHackMe</a>
+      <button onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I’m a second-year cybersecurity student from Perambalur, Tamil Nadu, with a strong foundation in networking, Linux and security fundamentals.</p>
+    <p>I have hands-on experience with vulnerability assessment, penetration testing labs and CTF platforms. I’m looking for a cybersecurity internship to build practical skills and gain real-world experience.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="two">
+      <div class="panel red">
+        <h3>Red team: test and attack</h3>
+        <ul>
+          <li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>Hydra, John the Ripper</li><li>ffuf, sqlmap, Aircrack-ng</li>
+        </ul>
+      </div>
+      <div class="panel blue">
+        <h3>Blue team: detect and defend</h3>
+        <ul>
+          <li>Wireshark, packet analysis</li><li>Nessus, vulnerability assessment</li><li>CyberChef</li><li>IDS fundamentals</li><li>OWASP Top 10, network security</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Operating systems: Kali Linux, Ubuntu, Windows, VMware Workstation, Termux. Networking: TCP/IP, OSI model, IP addressing, ports and protocols, Cisco Packet Tracer. Programming: Python, Java, C/C++, Bash.</p>
+  </section>
+
+  <section id="exp">
+    <h2>Experience and education</h2>
+    <div class="two">
+      <ul class="tl">
+        <li><strong>Cybersecurity Intern, CyberHeals Infotech Pvt. Ltd.</strong><span>May 2026 – June 2026</span>
+          <p>Identified and analysed web application vulnerabilities in line with OWASP guidelines.</p>
+          <p>Inspected network traffic with Wireshark to detect anomalies.</p>
+          <p>Prepared technical documentation and remediation steps.</p></li>
+      </ul>
+      <ul class="tl">
+        <li><strong>Undergraduate degree in Cybersecurity</strong><span>2nd year, 3rd semester · Present</span><p>Jamal Mohamed College, Tiruchirappalli</p></li>
+        <li><strong>Higher Secondary Certificate (Bio-Maths)</strong><span>Completed 2025</span><p>Sri Ramakrishna Boys Matric Hr. Sec. School</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="labs">
+    <h2>Projects and lab notes</h2>
+    <div class="chips" role="group" aria-label="Filter projects">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="red" aria-pressed="false">Red team</button>
+      <button data-f="blue" aria-pressed="false">Blue team</button>
+    </div>
+    <div class="labs">
+      <article class="lab" data-t="blue">
+        <h3>Automated Network Vulnerability Assessment</h3><small>Nessus Essentials, Metasploit, Wireshark</small>
+        <p>Scan detected 72 vulnerabilities, including 7 Critical and 4 High severity findings.</p>
+        <p>Analysed Ghostcat (CVE-2020-1938), the UnrealIRCd backdoor and SSLv2/v3 weaknesses.</p>
+        <p>Wrote a 3-phase remediation roadmap: immediate mitigation, OS migration and network access control hardening.</p>
+      </article>
+      <article class="lab" data-t="red">
+        <h3>Web Application Penetration Testing (DVWA)</h3><small>Kali Linux, Burp Suite, Hydra, SQLMap, Nmap</small>
+        <p>Assessed an intentionally vulnerable web app following the OWASP WSTG methodology.</p>
+        <p>Found Command Injection, Local File Inclusion (LFI) and weak authentication.</p>
+        <p>Documented each finding with proof-of-concept and recommended fixes.</p>
+      </article>
+      <article class="lab" data-t="red">
+        <h3>Metasploit Penetration Testing Lab</h3><small>Kali Linux, Windows 7, VMware</small>
+        <p>Built an isolated lab for authorised security testing.</p>
+        <p>Practised payload generation (MSFvenom), exploitation and basic post-exploitation.</p>
+        <p>Documented the process, results and security observations.</p>
+      </article>
+      <article class="lab" data-t="red">
+        <h3>TryHackMe hands-on labs</h3><small>Top 6% · abrarul007</small>
+        <p>Completed the Pre Security and Cyber Security 101 learning paths.</p>
+        <p>Practised vulnerability assessment, network mapping with Nmap and credential security audits.</p>
+      </article>
+      <article class="lab" data-t="red">
+        <h3>Service scan with Nmap</h3><small>lab note · red team</small>
+        <p>Find open ports and service versions on a host you own.</p>
+<pre><span class="c"># lab VM only</span>
+<span class="k">$</span> nmap -sV -p 1-1000 192.168.56.101
+22/tcp open  ssh   OpenSSH 8.9
+80/tcp open  http  Apache 2.4.52</pre>
+      </article>
+      <article class="lab" data-t="red">
+        <h3>Directory discovery with ffuf</h3><small>lab note · red team</small>
+        <p>List hidden web paths on your own test server.</p>
+<pre><span class="k">$</span> ffuf -u http://192.168.56.101/FUZZ \
+  -w /usr/share/wordlists/dirb/common.txt
+admin    [Status: 301]
+uploads  [Status: 301]</pre>
+      </article>
+      <article class="lab" data-t="blue">
+        <h3>Spot a port scan in Wireshark</h3><small>lab note · blue team</small>
+        <p>A burst of SYN packets with no ACK from one source is a scan signature.</p>
+<pre><span class="c"># display filter</span>
+tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0
+<span class="c"># expect: many SYNs to different ports</span></pre>
+      </article>
+      <article class="lab" data-t="blue">
+        <h3>Find form posts with tshark</h3><small>lab note · blue team</small>
+        <p>Pull login and upload requests out of a capture.</p>
+<pre><span class="k">$</span> tshark -r capture.pcap \
+  -Y 'http.request.method == "POST"'
+12  192.168.56.1 → 192.168.56.101  HTTP POST /login</pre>
+      </article>
+    </div>
+    <p class="note">Sample commands and outputs are illustrative. Only test systems you own or have written permission to test.</p>
+  </section>
+
+  <section id="certs">
+    <h2>Certifications and training</h2>
+    <ul class="tl">
+      <li><strong>Certified Cybersecurity Foundations (CORE)</strong><span>Hackviser</span></li>
+      <li><strong>Pre Security and Cyber Security 101</strong><span>TryHackMe</span></li>
+      <li><strong>Cybersecurity Training Program</strong><span>Palo Alto Networks</span></li>
+      <li><strong>Cisco Packet Tracer courses</strong><span>Getting Started, Exploring Networking, Exploring Internet of Things (Cisco Networking Academy)</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <a href="mailto:ahaq42907@gmail.com">ahaq42907@gmail.com</a>
+    <a href="tel:+917010809353">+91 7010809353</a>
+    <a href="https://www.linkedin.com/in/abrarul-haq-64b084382">LinkedIn</a>
+    <a href="https://tryhackme.com/p/abrarul007">TryHackMe</a>
+  </section>
+
+  <footer>© 2026 Abrarul Haq M · Perambalur, Tamil Nadu</footer>
+</div>
+
+<div class="bar" role="toolbar" aria-label="Edit controls">
+  <button id="edit" aria-pressed="false">Edit my details</button>
+  <button id="reset">Reset</button>
+  <span id="hint" hidden>Tap any text to type. Double-tap a link to change its URL.</span>
+</div>
+
+<script>
+(function(){
+  var KEY='portfolio-abrarul:v1',root=document.documentElement,wrap=document.querySelector('.wrap'),editBtn=document.getElementById('edit'),hint=document.getElementById('hint');
+  var SEL='nav a,h1 span,.role,.side,.cta a,section h2,section p,.panel h3,.panel li,.lab h3,.lab small,.lab p,.lab pre,.tl strong,.tl span,.contact a,footer';
+  function ls(f){try{return f()}catch(e){return null}}
+  function save(){
+    var c=wrap.cloneNode(true);
+    c.querySelectorAll('.ctl').forEach(function(n){n.remove()});
+    c.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});
+    c.querySelectorAll('[hidden]').forEach(function(n){n.removeAttribute('hidden')});
+    c.querySelectorAll('.chips button').forEach(function(b,i){b.setAttribute('aria-pressed',i===0)});
+    ls(function(){localStorage.setItem(KEY,JSON.stringify({h:c.innerHTML,t:root.getAttribute('data-theme')||''}))});
+  }
+  function ctl(cls,label,aria){var b=document.createElement('button');b.type='button';b.className='ctl '+cls;b.textContent=label;if(aria)b.setAttribute('aria-label',aria);b.setAttribute('contenteditable','false');return b}
+  function addControls(){
+    wrap.querySelectorAll('.panel li,.tl li,.lab').forEach(function(n){n.appendChild(ctl('del','Remove','Remove item'))});
+    wrap.querySelectorAll('.panel ul,.tl').forEach(function(l){l.after(ctl('add','+ Add item'))});
+    var labs=wrap.querySelector('.labs');labs.after(ctl('add','+ Add lab note'));
+  }
+  function setEdit(on){
+    document.body.classList.toggle('editing',on);
+    editBtn.setAttribute('aria-pressed',on);editBtn.textContent=on?'Done editing':'Edit my details';hint.hidden=!on;
+    wrap.querySelectorAll('.ctl').forEach(function(n){n.remove()});
+    wrap.querySelectorAll('[contenteditable]').forEach(function(n){n.removeAttribute('contenteditable')});
+    if(on){
+      wrap.querySelectorAll('.lab').forEach(function(l){l.hidden=false});
+      wrap.querySelectorAll(SEL).forEach(function(n){n.setAttribute('contenteditable','true')});
+      addControls();
+    }else save();
+  }
+  var d=ls(function(){return JSON.parse(localStorage.getItem(KEY)||'null')});
+  if(d){wrap.innerHTML=d.h;if(d.t)root.setAttribute('data-theme',d.t)}
+  editBtn.onclick=function(){setEdit(!document.body.classList.contains('editing'))};
+  document.getElementById('reset').onclick=function(){if(confirm('Reset to the original details?')){ls(function(){localStorage.removeItem(KEY)});location.reload()}};
+  wrap.addEventListener('click',function(e){
+    if(!document.body.classList.contains('editing'))return;
+    var t=e.target;
+    if(t.closest('a'))e.preventDefault();
+    if(t.classList.contains('del')){t.parentElement.remove();save()}
+    else if(t.classList.contains('add')){
+      var prev=t.previousElementSibling,last=prev.lastElementChild;
+      if(last){var n=last.cloneNode(true);n.querySelectorAll('.ctl').forEach(function(x){x.remove()});
+        n.querySelectorAll('[contenteditable]').forEach(function(x){x.removeAttribute('contenteditable')});
+        n.querySelectorAll(SEL).forEach(function(x){x.setAttribute('contenteditable','true')});
+        if(n.matches(SEL))n.setAttribute('contenteditable','true');
+        n.appendChild(ctl('del','Remove','Remove item'));prev.appendChild(n);save()}
+    }
+  });
+  wrap.addEventListener('dblclick',function(e){
+    if(!document.body.classList.contains('editing'))return;
+    var a=e.target.closest('a');if(!a)return;
+    var u=prompt('Link URL (use mailto:you@example.com for email):',a.getAttribute('href'));
+    if(u!==null){a.setAttribute('href',u);save()}
+  });
+  wrap.addEventListener('input',save);
+})();
+</script>
+<script>
+(function(){
+  var root=document.documentElement;
+  document.getElementById('mode').onclick=function(){
+    var cur=root.getAttribute('data-theme');
+    var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    root.setAttribute('data-theme',dark?'light':'dark');
+  };
+  var btns=document.querySelectorAll('.chips button'),labs=document.querySelectorAll('.lab');
+  btns.forEach(function(b){b.onclick=function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    labs.forEach(function(l){l.hidden=b.dataset.f!=='all'&&l.dataset.t!==b.dataset.f});
+  }});
+})();
+</script>
+</body>
+</html>
